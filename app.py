@@ -52,5 +52,9 @@ def process():
     return render_template("timeline.html")
 
 
+@app.route('/aboutus')
+def aboutus():
+    return render_template('abtUs.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

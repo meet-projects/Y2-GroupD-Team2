@@ -10,8 +10,8 @@ input {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: #060447;
-  color: #FFF38A;
+  background: black;
+  color: yellow;
   display: flex;
   align-items: center;
   justify-content: center;
