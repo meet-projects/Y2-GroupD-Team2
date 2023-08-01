@@ -36,12 +36,11 @@ def join():
         account_info = {
             'name': request.form['name'],
             'email':request.form['email'],
-            'sex':request.form['sex'],
-            'question1':request.form['question1'],
-            'question2':request.form['question2'],
-            'question3':request.form['question3'],
-            'alg':request.form.getlist('alg'),
-            'fufu':request.form.getlist('fufu')
+            'type':request.form['tp'],
+            'illness':request.form['illness'],
+            'age':request.form['age'],
+            'number':request.form['number'],
+            'call':request.form['call']
         }
         db.child("candidates").push(account_info)
     return render_template("join.html")
