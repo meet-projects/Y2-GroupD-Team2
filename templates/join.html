@@ -30,8 +30,7 @@
         }
 
         input[type="text"],
-        input[type="email"],
-        input[type="checkbox"] {
+        input[type="email"]{
             width: 100%;
             padding: 8px;
             margin-bottom: 12px;
@@ -52,17 +51,43 @@
             background-color: #ffa940;
         }
 
-        /* Additional styles for focused input elements */
         input.focused {
             border-color: #fda50f;
-            /* Change border color when focused */
             box-shadow: 0 0 8px #fda50f;
-            /* Add a box shadow when focused */
+        }
+        
+        .container {
+            margin-top: 5%;
+        }
+
+        /* Additional Styles */
+
+        label[for]:after {
+            content: "*";
+            color: red;
+            margin-left: 4px;
+        }
+
+        input[type="submit"]:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
 
 <body>
+
     <div class="container">
         <form action="/join" method="post">
             <h1>Details:</h1>
@@ -77,44 +102,28 @@
             </div>
 
             <div class="form-group">
-                <label for="q2">Sex:</label>
-                <input type="text" id="q2" name="sex" class="form-control" required>
+                <label for="q2">What allergy do have:</label>
+                <input type="text" id="q2" name="type" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="q1">Additional major illnesses:</label>
-                <input type="text" id="q1" name="question1" class="form-control" required>
+                <input type="text" id="q1" name="mg" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="q3">Date of birth:</label>
-                <input type="text" id="q3" name="question3" class="form-control" required>
-            </div>
-
-            <h2>Peanut allergy info:</h2>
-            <div class="form-group">
-                <label for="q2">At what age did allergic signs first appear:</label>
-                <input type="text" id="q1" name="question2" class="form-control" required>
+                <label for="q3">Age:</label>
+                <input type="number" id="q3" name="question3" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label>What were the signs of the allergic reaction (Check all that apply):</label><br>
-                <input type="checkbox" id="q4_hobby1" name="alg" value="loc">
-                <label for="q4_hobby1">Local rash</label><br>
-                <input type="checkbox" id="q4_hobby2" name="alg" value="vomd">
-                <label for="q4_hobby2">Vomiting and/or diarrhea</label><br>
-                <input type="checkbox" id="q4_hobby3" name="alg" value="loss">
-                <label for="q4_hobby3">Loss of consciousness</label><br>
+                <label for="q3">Phone number:</label>
+                <input type="number" id="q3" name="question3" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label>Who determined the diagnosis? (Check all that apply):</label><br>
-                <input type="checkbox" id="q5_lang1" name="fufu" value="doctor">
-                <label for="q5_lang1">allergy doctor</label><br>
-                <input type="checkbox" id="q5_lang2" name="fufu" value="ped">
-                <label for="q5_lang2">pediatrician</label><br>
-                <input type="checkbox" id="q5_lang3" name="fufu" value="fam">
-                <label for="q5_lang3">family physician</label><br>
+                <label>Want us to contact you back:</label><br>
+                Sure! <input type="checkbox" id="call" name="call_or_not" value="call">
             </div>
 
             <input type="submit" value="Submit" class="btn btn-primary">
@@ -126,7 +135,7 @@
 
     <script>
         function handleSubmit(event) {
-            event.preventDefault(); 
+            event.preventDefault();
 
             alert("Form submitted successfully!");
         }
@@ -139,8 +148,8 @@
             event.target.classList.remove("focused");
         }
 
-        document.getElementById("email").addEventListener("focus", handleFocus);
-        document.getElementById("email").addEventListener("blur", handleBlur);
+        document.getElementById("em").addEventListener("focus", handleFocus);
+        document.getElementById("em").addEventListener("blur", handleBlur);
         document.getElementById("q1").addEventListener("focus", handleFocus);
         document.getElementById("q1").addEventListener("blur", handleBlur);
         document.getElementById("q2").addEventListener("focus", handleFocus);
