@@ -2,12 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask import session as login_session
 import pyrebase
 
-#genrale advices :
-#i think you can delete the form.html if you dont use it 
-#you need now to create another html page that will ask for a password and then will show you the data base info in a fyp style kind of
-#look at the account inf dict
-#i think there is issues with the about and the process pages
-
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
 
@@ -41,17 +35,25 @@ def join():
     if request.method == 'POST':
         account_info = {
             'name': request.form['name'],
-            'age': request.form['age'],
-            #try also get the phone number and all the other paremeters cuase if you ask for them use them
+            'email':request.form['email'],
+            'type':request.form['tp'],
+            'illness':request.form['illness'],
+            'age':request.form['age'],
+            'number':request.form['number'],
+            'call':request.form['call']
         }
-        db.child("candidates").set(account_info)
+        db.child("candidates").push(account_info)
     return render_template("join.html")
 
 
 @app.route('/process', methods=['GET', 'POST'])
 def process():
-    return render_template("process.html")
+    return render_template("timeline.html")
 
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('abtUs.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
