@@ -11,7 +11,7 @@ input {
 body {
   font-family: "Montserrat", sans-serif;
   background: black;
-  color: yellow;
+  color:  #fbcc28;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +51,7 @@ body {
   margin-top: -1px;
   width: 100%;
   height: 2px;
-  background: #827B68;
+  background:  #fbcc28;
 }
 .starwars .timeline-line:before {
   content: "";
@@ -59,7 +59,7 @@ body {
   left: 0;
   width: 0%;
   height: 100%;
-  background: #FFF38A;
+  background: #fbcc28;
   transition: 350ms ease all;
 }
 .starwars .timeline-dot {
@@ -69,7 +69,7 @@ body {
   width: 2rem;
   border-radius: 50%;
   border: 2px solid #827B68;
-  background: #FFF38A;
+  background: #fbcc28;
   transition: 350ms ease all;
 }
 .starwars .films-info {
