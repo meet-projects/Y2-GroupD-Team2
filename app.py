@@ -35,15 +35,17 @@ def join():
     if request.method == 'POST':
         account_info = {
             'name': request.form['name'],
-            'email':request.form['email'],
-            'type':request.form['tp'],
-            'illness':request.form['illness'],
-            'age':request.form['age'],
-            'number':request.form['number'],
-            'call':request.form['call']
+            'email': request.form['email'],
+            'type': request.form['tp'],
+            'illness': request.form['illness'],
+            'age': request.form['age'],
+            'number': request.form['number'],
+            'call': request.form.get('call', '') 
         }
         db.child("candidates").push(account_info)
+        return redirect(url_for('home'))
     return render_template("join.html")
+
 
 
 @app.route('/process', methods=['GET', 'POST'])
@@ -54,6 +56,38 @@ def process():
 @app.route('/aboutus')
 def aboutus():
     return render_template('abtUs.html')
+
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    candidates_data = db.child("candidates").get()
+
+    if candidates_data.each():
+        candidates_list = [{"candidate_id": candidate.key(), "candidate_data": candidate.val()} for candidate in candidates_data.each()]
+    else:
+        candidates_list = []
+
+    return render_template('admin.html', candidates=candidates_list)
+
+
+
+
+
+
+@app.route('/login', methods=['GET','POST'])
+def login():
+    if request.method=='POST':
+        email = request.form['email']
+        password = request.form['password']
+        if (email == 'ukko@gmail.com') and (password == "12345678"):
+            return redirect(url_for("admin"))
+    return render_template('login.html')
+
+@app.route('/remove_candidate/<candidate_id>', methods=['POST'])
+def remove_candidate(candidate_id):
+    db.child("candidates").child(candidate_id).remove()
+    flash("Candidate removed successfully!", "success")
+    return redirect(url_for('admin'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

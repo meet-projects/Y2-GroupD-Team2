@@ -16,6 +16,10 @@ html {
   box-sizing: inherit;
 }
 
+.about-section{
+  background-color: #fbcc28;
+}
+
 .column {
   float: left;
   width: 33.3%;
@@ -37,6 +41,12 @@ html {
 
 .about-section p, h1 {
     color: black;
+    background-color: #fbcc28;
+}
+
+.about-section{
+  margin-bottom: 15vh;
+  padding-bottom: 15vh;
 }
 
 .container {
@@ -75,7 +85,65 @@ html {
     display: block;
   }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+#bar {
+  background-color: #fbcc28;
+  font-family: "Montserrat", sans-serif;
+  height: 11vh;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.navMenu {
+  position: absolute;
+  top: 5.5%;
+  left: 82%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 35%;
+  background-color: #fbcc28;
+}
+
+.navMenu a {
+  color: #000000;
+  background-color: #fbcc28;
+  text-decoration: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  padding: 3%;
+  
+}
+
+.navMenu a:hover {
+  color: #ffffff;
+}
+
+  
 </style>
+<div id="bar" >
+  <nav class="navMenu">
+    <a href="/">Home</a>
+    <a href="/process">Process</a>
+    <a href="/aboutus">About</a>
+    <a href="/join">Join Us</a>
+    <div class="dot"></div>
+  </nav>
+  </div>
 </head>
 <body>
 
@@ -89,7 +157,9 @@ html {
 <div class="row">
   <div class="column">
     <div class="card">
+      <center>
       <img src="static/img/anat.jpg" alt="Anat" style="height: 300px">
+    </center>
       <div class="container">
         <h2>Anat</h2>
         <p class="title">CEO & Founder</p>
@@ -102,7 +172,9 @@ html {
 
   <div class="column">
     <div class="card">
+      <center>
       <img src="static/img/yanay.jpg" alt="Yanay" style="height: 300px">
+    </center>
       <div class="container">
         <h2>YANAY OFRAN</h2>
         <p class="title">Chairman & Co-Founder</p>
@@ -114,7 +186,9 @@ html {
   
   <div class="column">
     <div class="card">
-      <img src="static/img/tim.jpg" alt="Tim" style="height: 300px">
+      <center>
+      <img src="https://static.wixstatic.com/media/feedb0_a8c692b8668a41fe851f511db849980b~mv2.jpg/v1/crop/x_0,y_0,w_532,h_504/fill/w_210,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Tim-Garnett_edited.jpg" alt="Tim" style="height: 300px">
+    </center>
       <div class="container">
         <h2>DR. TIM GARNETT </h2>
         <p class="title">Former CMO and SVP, Eli-Lily</p>

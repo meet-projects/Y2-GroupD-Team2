@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login to admin board</title>
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+<body>
+    <center>
+    <div class="interface">
+    <form method="post" action="/login">
+
+        <div>
+            <label>Email address</label>
+            <div>
+                <input id="logemail" type="email"  name="email" id="emailStr" required>
+            </div>
+        </div>
+
+        <div>
+            <label id="pass">Password</label>
+            <div class="input-group">
+                <input id="logpass" type="password"  name="password" required>
+            </div>
+        </div>
+
+        <input class= "inbutton" type="submit" value="Login"/>
+
+    </form>
+    <br>
+</center>
+</div>
+</body>
+</html>

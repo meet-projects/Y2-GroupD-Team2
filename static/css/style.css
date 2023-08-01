@@ -10,7 +10,7 @@ input {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: black;
+  background: rgb(255, 255, 255);
   color:  #fbcc28;
   display: flex;
   align-items: center;
@@ -283,3 +283,6 @@ body {
 .starwars #input-3:not(:checked) ~ .left:hover ~ .content .film-date[class*="-3"] {
   right: 150px;
 }
+
+
+
