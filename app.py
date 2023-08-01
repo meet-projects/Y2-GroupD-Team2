@@ -35,7 +35,17 @@ def join():
     if request.method == 'POST':
         account_info = {
             'name': request.form['name'],
-            'age': request.form['age'],
+            'email':request.form['email'],
+            'sex':request.form['sex'],
+            'question1':request.form['question1'],
+            'question2':request.form['question2'],
+            'question3':request.form['question3'],
+            'rash':request.form['rash'],
+            'vomiting':request.form['vomiting'],
+            'consciousness':request.form['consciousness'],
+            'doctor':request.form['doctor'],
+            'pediatrician':request.form['pediatrician'],
+            'family':request.form['family'],
         }
         db.child("candidates").set(account_info)
     return render_template("join.html")
