@@ -59,28 +59,35 @@ def aboutus():
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
-    candidates_data = db.child("candidates").get()
+    # Check if the user is logged in
+    if 'logged_in' in login_session and login_session['logged_in']:
+        candidates_data = db.child("candidates").get()
 
-    if candidates_data.each():
-        candidates_list = [{"candidate_id": candidate.key(), "candidate_data": candidate.val()} for candidate in candidates_data.each()]
+        if candidates_data.each():
+            candidates_list = [{"candidate_id": candidate.key(), "candidate_data": candidate.val()} for candidate in candidates_data.each()]
+        else:
+            candidates_list = []
+
+        return render_template('admin.html', candidates=candidates_list)
     else:
-        candidates_list = []
+        return redirect(url_for('login'))
 
-    return render_template('admin.html', candidates=candidates_list)
-
-
-
-
-
-
-@app.route('/login', methods=['GET','POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method=='POST':
         email = request.form['email']
         password = request.form['password']
         if (email == 'ukko@gmail.com') and (password == "12345678"):
+            login_session['logged_in'] = True
             return redirect(url_for("admin"))
+        else:
+            flash("Invalid email or password", "error")
     return render_template('login.html')
+
+@app.route('/logout', methods=['GET', 'POST'])
+def logout():
+    login_session.clear()
+    return redirect(url_for('home'))
 
 @app.route('/remove_candidate/<candidate_id>', methods=['POST'])
 def remove_candidate(candidate_id):

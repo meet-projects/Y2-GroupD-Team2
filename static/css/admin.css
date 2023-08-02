@@ -6,7 +6,6 @@ html{
     color: rgb(0, 0, 0);
 }
 
-
 #head{
     font-size: 5vh;
     width: 90vw;
@@ -25,7 +24,6 @@ input{
     border-radius: 10px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2vw;
-
 }
 
 input:hover{
@@ -37,3 +35,10 @@ input:hover{
     width: 93vw;
     text-align: left;
 }
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 10px; 
+}
+
