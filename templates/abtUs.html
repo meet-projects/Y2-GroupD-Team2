@@ -27,16 +27,14 @@ html {
   padding: 0 8px;
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
+
 
 .about-section {
-  padding: 50px;
+  padding:80px;
   text-align: center;
   background-color: #fbcc28;
   color: white;
+  font-size: 3vh;
 }
 
 .about-section p, h1 {
@@ -47,10 +45,6 @@ html {
 .about-section{
   margin-bottom: 15vh;
   padding-bottom: 15vh;
-}
-
-.container {
-  padding: 0 16px;
 }
 
 .container::after, .row::after {
@@ -124,6 +118,36 @@ html {
   color: #ffffff;
 }
 
+.card .container{
+  height: 30vh;
+  
+}
+.row {
+  display: flex;
+  align-items: center;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5vh;
+  padding-top: 3vh;
+}
+
+.container {
+  padding: 0 16px;
+  margin-top: auto;
+}
+
+p button{
+  margin-top: 10vh;
+}
+
+.about-section h1{
+  margin-bottom: 5vh;
+}
   
 </style>
 <div id="bar" >
@@ -140,19 +164,25 @@ html {
 
 <div class="about-section">
   <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
+  <p>  Our mission is to improve
+    the lives of the millions that
+    suffer from food allergies<br>
+    Ukko’s computational engineering platform
+    re-designs food allergens, turning them into safe and efficacious 
+    therapeutics that will become best in class therapy for allergy<br>
+    We are building a comprehensive, clinically validated map 
+    of the molecular structure of food allergies, unlocking critical knowledge 
+    about the biological mechanisms that drive human-food interactions.<br>
+    On the basis of this map, we use  platform to design new versions of the 
+    proteins that do not trigger an immune response. These proteins allow a 
+    whole new approach for how we treat protein based allergies. </p>
 </div>
-<center><h1>
-Ukko’s computational engineering platform
-re-designs food allergens, turning them into safe and efficacious therapeutics that will become best in class therapy for allergy</h1></center>
+
 
 <h2 style="text-align:center">Our Team</h2>
 <div class="row">
   <div class="column">
     <div class="card">
-      
-
       <center>
       <img src="static/img/anat.jpg" alt="Anat" style="height: 300px">
     </center>
@@ -175,6 +205,7 @@ re-designs food allergens, turning them into safe and efficacious therapeutics t
         <h2>YANAY OFRAN</h2>
         <p class="title">Chairman & Co-Founder</p>
         <p>YANAY@ukko.com</p>
+        <br>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
@@ -188,6 +219,8 @@ re-designs food allergens, turning them into safe and efficacious therapeutics t
       <div class="container">
         <h2>DR. TIM GARNETT </h2>
         <p class="title">Former CMO and SVP, Eli-Lily</p>
+        <br>
+        <br>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
