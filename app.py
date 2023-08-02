@@ -40,7 +40,7 @@ def join():
             'illness': request.form['illness'],
             'age': request.form['age'],
             'number': request.form['number'],
-            'call': request.form.get('call', '') 
+            'call': request.form.get('call', 'false') 
         }
         db.child("candidates").push(account_info)
         return redirect(url_for('home'))

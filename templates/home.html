@@ -43,9 +43,11 @@ margin:0px;
 	width: 80px;
 
 }
-
 .navbar {
 	background-color: #FBCC28;
+	font-family: 'Montserrat', sans-serif;
+	padding-bottom: 2.5vh;
+	border-bottom: solid;
 }
 
 .navbar .menu {
@@ -54,6 +56,7 @@ margin:0px;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 17px;
 	margin-right: 20px;
+	
 }
 .navbar .menu ul {
 	list-style: none;
@@ -67,7 +70,7 @@ margin:0px;
 .navbar .menu ul li a{
 	color: black;
 	text-decoration: none;
-  font-size:18px;
+  font-size:2.8vh;
   font-weight: bold;
 }
 .navbar .menu ul li a:hover {
@@ -459,10 +462,7 @@ z-index:2
 }
 /**/
 
-.About_Us  .Story .info-img {
-;
-	margin-left: 432px; 
-}
+
 .About_Us  .Story .info-img .color {
 	width: 170px;
 	height: 170px;
@@ -559,6 +559,10 @@ z-index:2
 	line-height: 25px;
 }
 
+#video{
+	padding-bottom: 15vh;
+}
+
 	.footer {
 		background-color: #222222;
 		color: #FFF;
@@ -567,6 +571,9 @@ z-index:2
 		overflow: hidden;
 }
 
+#more{
+	font-size: 15px;
+}
 	</style>
 	<script type="text/javascript">
 		$(function () {
@@ -603,10 +610,7 @@ z-index:2
 <!--End navbar-->
 	<div class="home-text">
 		<h1>Welcome Ukko!</h1>
-		<h3>Our mission is to improve
-the lives of the millions that
-suffer from food allergies </h3>
-		<button><a href="/process">TELL ME MORE</a></button>
+		<button id="more"><a href="/process">learn more about<br> the process</a></button>
 	</div>
 	</div>
 
@@ -641,6 +645,9 @@ suffer from food allergies </h3>
 	</div>
 
 </div>
+<center>
+<iframe id="video" width="840" height="473" src="https://www.youtube.com/embed/EgnjSLff1xk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
 
 	<div class="footer">
 	   <span class="f">copyright 2017 &copy; Sultan khaled  Inc</span>

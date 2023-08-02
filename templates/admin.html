@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/admin.css">
+    <link rel="stylesheet" href="static/css/admin.css">
     <title>Admin Panel</title>
 </head>
 <body>
@@ -11,8 +11,8 @@
         <h1>Admin Panel</h1>
     </div>
 
-    <div class="bar"></div>
 
+<center>
     <div class="info" id="adminInfo">
         {% if candidates %}
             {% for candidate in candidates %}
@@ -33,5 +33,6 @@
             <h2>No candidates found.</h2>
         {% endif %}           
     </div>
+</center>
 </body>
 </html>
